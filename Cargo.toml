@@ -1,0 +1,17 @@
+# -*- eval: (cargo-minor-mode 1) -*-
+
+[package]
+name = "hershey"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+license = "Apache-2.0 OR LGPL-3.0"
+description = "Hershey font format parser"
+keywords = ["font", "format", "hershey"]
+
+repository = "https://github.com/kicad-rs/hershey"
+
+[dependencies]
+itertools = "0.10.3"
+thiserror = "1.0"
