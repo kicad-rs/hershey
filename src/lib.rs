@@ -8,11 +8,11 @@ pub enum Vector {
 }
 
 pub struct Glyph {
-	vectors: Vec<Vector>,
-	min_x: i32,
-	min_y: i32,
-	max_x: i32,
-	max_y: i32
+	pub vectors: Vec<Vector>,
+	pub min_x: i32,
+	pub min_y: i32,
+	pub max_x: i32,
+	pub max_y: i32
 }
 
 #[derive(Clone, Copy)]
