@@ -40,7 +40,7 @@ enum Pen {
 }
 
 impl<'a> Font<'a> {
-	pub fn new(data: &'a [&'a str], offset: char) -> Self {
+	pub const fn new(data: &'a [&'a str], offset: char) -> Self {
 		Self {
 			data,
 			offset: offset as usize
