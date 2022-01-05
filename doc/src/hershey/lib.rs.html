@@ -112,11 +112,11 @@
 }
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Glyph</span> {
-	<span class="ident">vectors</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Vector</span><span class="op">&gt;</span>,
-	<span class="ident">min_x</span>: <span class="ident">i32</span>,
-	<span class="ident">min_y</span>: <span class="ident">i32</span>,
-	<span class="ident">max_x</span>: <span class="ident">i32</span>,
-	<span class="ident">max_y</span>: <span class="ident">i32</span>
+	<span class="kw">pub</span> <span class="ident">vectors</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Vector</span><span class="op">&gt;</span>,
+	<span class="kw">pub</span> <span class="ident">min_x</span>: <span class="ident">i32</span>,
+	<span class="kw">pub</span> <span class="ident">min_y</span>: <span class="ident">i32</span>,
+	<span class="kw">pub</span> <span class="ident">max_x</span>: <span class="ident">i32</span>,
+	<span class="kw">pub</span> <span class="ident">max_y</span>: <span class="ident">i32</span>
 }
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
