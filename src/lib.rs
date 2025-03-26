@@ -23,11 +23,11 @@ pub struct Font<'a> {
 
 #[derive(Clone, Copy, Error)]
 #[error("no such glyph")]
-pub struct NoSuchGlyph(());
+pub struct NoSuchGlyph;
 
 impl Debug for NoSuchGlyph {
 	fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-		f.debug_tuple("NoSuchGlyph").finish()
+		write!(f, "NoSuchGlyph")
 	}
 }
 
@@ -49,7 +49,7 @@ impl<'a> Font<'a> {
 
 	pub fn glyph(&self, ch: char) -> Result<Glyph, NoSuchGlyph> {
 		let idx = ch as usize - self.offset;
-		let data = self.data.get(idx).ok_or(NoSuchGlyph(()))?;
+		let data = self.data.get(idx).ok_or(NoSuchGlyph)?;
 
 		let mut glyph = Glyph {
 			vectors: Vec::new(),
