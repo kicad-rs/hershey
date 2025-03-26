@@ -13,5 +13,5 @@ repository = "https://github.com/kicad-rs/hershey"
 include = ["src/**/*", "LICENSE*"]
 
 [dependencies]
-itertools = "0.10.3"
-thiserror = "1.0"
+itertools = "0.14"
+thiserror = "2.0"
