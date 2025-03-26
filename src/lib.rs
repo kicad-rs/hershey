@@ -21,9 +21,10 @@ pub struct Font<'a> {
 	offset: usize
 }
 
+/// The requested glyph with character code could not be found.
 #[derive(Clone, Copy, Error)]
-#[error("no such glyph")]
-pub struct NoSuchGlyph;
+#[error("no such glyph {}", .0)]
+pub struct NoSuchGlyph(char);
 
 impl Debug for NoSuchGlyph {
 	fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
@@ -49,7 +50,7 @@ impl<'a> Font<'a> {
 
 	pub fn glyph(&self, ch: char) -> Result<Glyph, NoSuchGlyph> {
 		let idx = ch as usize - self.offset;
-		let data = self.data.get(idx).ok_or(NoSuchGlyph)?;
+		let data = self.data.get(idx).ok_or(NoSuchGlyph(ch))?;
 
 		let mut glyph = Glyph {
 			vectors: Vec::new(),
