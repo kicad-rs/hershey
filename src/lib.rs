@@ -28,7 +28,7 @@ pub struct NoSuchGlyph(char);
 
 impl Debug for NoSuchGlyph {
 	fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-		write!(f, "NoSuchGlyph")
+		f.debug_tuple("NoSuchGlyph").field(&self.0).finish()
 	}
 }
 
